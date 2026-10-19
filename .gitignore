@@ -1,4 +1,20 @@
+# dependencies
 node_modules/
+
+# secrets (keep the committed template)
 .env
+.env.*
+!.env.example
+
+# downloads from `pnpm ftp:backup`
 backup/
-.env.local
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# logs
+*.log

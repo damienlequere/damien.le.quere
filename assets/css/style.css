@@ -54,6 +54,18 @@ cite {
     margin-right: 0.5rem;
 }
 
+/* Bootstrap keeps the light-theme grey (#6c757d) in dark mode, unreadable on the dark footer */
+[data-bs-theme="dark"] .btn-outline-secondary {
+    --bs-btn-color: #adb5bd;
+    --bs-btn-border-color: #adb5bd;
+    --bs-btn-hover-color: #212529;
+    --bs-btn-hover-bg: #adb5bd;
+    --bs-btn-hover-border-color: #adb5bd;
+    --bs-btn-active-color: #212529;
+    --bs-btn-active-bg: #adb5bd;
+    --bs-btn-active-border-color: #adb5bd;
+}
+
 /* Download buttons floated to the right of a list item, above it on phones */
 .item-actions {
     margin-bottom: 0.75rem;

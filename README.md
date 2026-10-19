@@ -62,6 +62,7 @@ directories left empty) and deletes them after a `y/N` confirmation. Free's
 ```
 index.html            Home
 cv/index.html         Resume (served at /cv/)
+cv/fr/index.html      French resume (served at /cv/fr/), keep in sync with the English one
 publications.html     Thesis summary and publications
 projects.html         Academic projects
 contact.html          Contact

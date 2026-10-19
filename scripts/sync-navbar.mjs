@@ -19,6 +19,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const pages = {
   "index.html": ["home"],
   "cv/index.html": ["cv"],
+  "cv/fr/index.html": ["cv"],
   "publications.html": ["works", "publications"],
   "projects.html": ["works", "projects"],
   "contact.html": ["contact"],

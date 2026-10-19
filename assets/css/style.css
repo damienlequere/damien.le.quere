@@ -149,9 +149,9 @@ cite {
     font-size: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 
-    /* .page-cv main, */
+    .page-cv main,
     .page-publications main,
     .page-projects main {
         font-size: 1.2rem;
@@ -243,6 +243,11 @@ cite {
     .page-cv dt {
         text-align: right;
         margin: 0.25rem 0 0.75rem 1rem;
+    }
+
+    /* Experiences: the date only sits beside the title, the description starts below both */
+    .page-cv dd>h3+* {
+        clear: both;
     }
 }
 

@@ -230,7 +230,9 @@ cite {
     text-align: center;
 }
 
+/* Clear the photo: where it is taller than the address, its float would shift the centred title left */
 .page-cv .cv-title {
+    clear: both;
     margin: 2.5rem 0;
 }
 

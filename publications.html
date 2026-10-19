@@ -1,44 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Resume &ndash; Damien Le Quéré" />
+  <meta name="description" content="Damien Le Quéré – software engineer" />
   <meta name="author" content="Damien Le Quéré" />
-  <title>Damien Le Quéré 's pages</title>
-  <link href="../assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="style.css" media="screen" title="Normal" />
-  <style>
-    main {
-      font-size: 1.2rem
-    }
-
-    .list-group-item:hover {
-      background-color: #f8f9fa;
-    }
-
-    .list-group-item {
-      line-height: 2rem;
-    }
-
-    dd {
-      margin-bottom: 3rem;
-    }
-
-    /* dd:hover {
-      background-color: #f8f9fa;
-    } */
-  </style>
-  <script src="./assets/scripts/navbar.js"></script>
+  <title>Publications – Damien Le Quéré</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/navbar.js" defer></script>
 </head>
 
-<body>
-  <nav id="navbar" class="navbar sticky-top navbar-expand-md navbar-light py-3"
-    style="background-color:rgba(255,255,255,1);box-shadow:0 0.5rem 1rem rgba(0,0,0,0.05),inset 0 -1px 0 rgba(0,0,0,0.15);">
+<body class="page-publications">
+  <nav id="navbar" class="navbar sticky-top navbar-expand-md navbar-light py-3 noprint">
     <div class="container">
-      <!--<a class="navbar-brand" href="./index.html">[ Damien Le Quéré ]</a>-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -58,8 +34,7 @@
               Works
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item active" href="publications.html">Publications <span
-                  class="sr-only">(current)</span></a>
+              <a class="dropdown-item active" href="publications.html">Publications <span class="sr-only">(current)</span></a>
               <a class="dropdown-item" href="projects.html">Projects</a>
             </div>
           </li>
@@ -67,7 +42,6 @@
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
-
       </div>
     </div>
   </nav>
@@ -76,11 +50,6 @@
     <h1>
       Conception et étude des performances d’une solution auto-configurable pour les réseaux de transport du futur
     </h1>
-
-    <!--<p>
-          <img src="./img/univ-rennes.png" alt="Univ Rennes 1 Logo" title="" style="height:50px;"/>
-          <img src="./img/orange.png" alt="Orange Logo" title="" style="height:50px;"/>
-      </p>-->
 
     <p class="lead my-5" style="font-size:1.5rem;">
       Dans cette thèse, nous étudions LOCARN : &laquo;&nbsp;Low Opex &amp; Capex Architecture for Resilient
@@ -95,12 +64,9 @@
       et de <abbr title="Capital EXPenditure">CAPEX</abbr>.
     </p>
 
-    <!--<img src="https://www.univ-rennes1.fr/sites/www.univ-rennes1.fr/files/logo_ur1_gris.png" alt=""/>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/langfr-150px-Orange_logo.svg.png" alt=""/>-->
-
     <div class="mb-5">
-      <img src="./img/renne1_logo.png" class="img-fluid" alt="" width="170rem" style="margin-right: 2rem" />
-      <img src="./img/orange_logo.png" class="img-fluid" alt="" width="85rem" />
+      <img src="./assets/img/renne1_logo.png" class="img-fluid" alt="Université de Rennes 1" width="170" style="margin-right: 2rem" />
+      <img src="./assets/img/orange_logo.png" class="img-fluid" alt="Orange" width="85" />
     </div>
     <hr class="w-100" />
     <div class="mt-4">
@@ -139,7 +105,7 @@
           détermine l’interface
           de sortie du paquet, ou &laquo;&nbsp;prochain saut&nbsp;&raquo;.
         </p>
-        </br>
+        <br />
         <p>
           Dans LOCARN, les paquets sont dits &laquo;&nbsp;auto-acheminés&nbsp;&raquo; dans la mesure où le prochain
           saut d’un paquet est uniquement basé sur des informations contenus dans le paquet lui-même. Le nœud d’entrée
@@ -215,10 +181,12 @@
           technologies de transports et basée sur la détermination d’un chemin/lien de secours de façon proactive.
         </p>
       </dd>
+    </dl>
+
       <div class="text-center" style="margin-top: 2rem">
         <div role="group" aria-label="" style="margin-top: 2rem">
-          <a href="./manuscrit_final.pdf" class="btn btn-lg btn-primary mx-3">Manuscrit</a>
-          <a href="./presentation_finale.pptx" class="btn btn-lg btn-primary mx-3">Slides</a>
+          <a href="./files/thesis/manuscrit_final.pdf" class="btn btn-lg btn-primary mx-3">Manuscrit</a>
+          <a href="./files/thesis/presentation_finale.pptx" class="btn btn-lg btn-primary mx-3">Slides</a>
         </div>
       </div>
 
@@ -227,9 +195,9 @@
       <ul class="list-group">
         <li class="list-group-item p-4">
           <div class="btn-group" role="group" aria-label="" style="float: right; margin-left: 2em">
-            <a href="http://damien.le.quere.free.fr/publications/towards_a_large_scale_locarn.pdf"
+            <a href="./files/publications/towards_a_large_scale_locarn.pdf"
               class="btn btn-primary">article</a>
-            <a href="./publications/poster_globecom_2014.pdf" class="btn btn-primary">poster</a>
+            <a href="./files/publications/poster_globecom_2014.pdf" class="btn btn-primary">poster</a>
           </div>
           <h5 class="card-title">International Workshop</h5>
           <p class="card-text">
@@ -245,7 +213,7 @@
         </li>
         <li class="list-group-item p-4">
           <p style="float: right">
-            <a href="http://damien.le.quere.free.fr/publications/locarn_studia_informatica_universalis.pdf"
+            <a href="./files/publications/locarn_studia_informatica_universalis.pdf"
               class="btn btn-primary noprint" target="_blank">article</a>
           </p>
           <h5 class="card-title">Journal (Special Issue)</h5>
@@ -259,7 +227,7 @@
         </li>
         <li class="list-group-item p-4">
           <p style="float: right">
-            <a href="http://damien.le.quere.free.fr/publications/scalability_and_performances_evaluation_of_LOCARN.pdf"
+            <a href="./files/publications/scalability_and_performances_evaluation_of_LOCARN.pdf"
               class="btn btn-primary">article</a>
             <!--<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&amp;arnumber=6860545&amp;sortType%3Dasc_p_Sequence%26filter%3DAND%28p_IS_Number%3A6860533%29" class="btn btn-primary">IEEE Xplore</a>-->
           </p>
@@ -281,9 +249,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-    crossorigin="anonymous"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

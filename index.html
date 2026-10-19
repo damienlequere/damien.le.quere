@@ -1,40 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="h-100">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Resume &ndash; Damien Le Quéré" />
+  <meta name="description" content="Damien Le Quéré – software engineer" />
   <meta name="author" content="Damien Le Quéré" />
-  <title>Damien Le Quéré 's pages</title>
-  <link href="../assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="style.css" media="screen" title="Normal" />
-  <style>
-    html,
-    body,
-    main {
-      height: 100%;
-    }
-
-    .v-center {
-      margin-top: -72px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-  </style>
-  <script src="./assets/scripts/navbar.js"></script>
+  <title>Damien Le Quéré</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/navbar.js" defer></script>
 </head>
 
-<body>
-  <nav id="navbar" class="navbar sticky-top navbar-expand-md navbar-light py-3" style="
-        background-color: rgba(255, 255, 255, 1);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05),
-          inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-      ">
+<body class="page-home h-100">
+  <nav id="navbar" class="navbar sticky-top navbar-expand-md navbar-light py-3 noprint">
     <div class="container">
-      <!--<a class="navbar-brand" href="./index.html">[ Damien Le Quéré ]</a>-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -43,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto text-center">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cv/index.html">Resume</a>
@@ -54,7 +34,7 @@
               Works
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="publications.html">Publications <span class="sr-only">(current)</span></a>
+              <a class="dropdown-item" href="publications.html">Publications</a>
               <a class="dropdown-item" href="projects.html">Projects</a>
             </div>
           </li>
@@ -66,7 +46,7 @@
     </div>
   </nav>
 
-  <main class="v-center">
+  <main class="v-center h-100">
     <div style="text-align: center; max-width: 500px; margin: 0 auto;">
       <h1 class="display-4">Welcome</h1>
       <p class="lead" style="font-size: 1.5rem;margin-bottom:2rem">
@@ -95,9 +75,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-    crossorigin="anonymous"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -1,85 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Resume&ndash;Damien Le Quéré" />
+  <meta name="description" content="Damien Le Quéré – software engineer" />
   <meta name="author" content="Damien Le Quéré" />
-  <title>Damien Le Quéré 's resume</title>
-  <link href="../assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="../style.css" media="screen" title="Normal" />
-  <style>
-    main {
-      font-size: 1.2rem;
-    }
-
-    h1,
-    h2 {
-      margin: 3rem 0;
-      text-align: center;
-    }
-
-    h1 {
-      margin-bottom: 3rem;
-    }
-
-    @media print {
-      #custom-header {
-        width: 850px;
-      }
-    }
-
-    /* .list-group-item:hover,
-    dd:hover {
-      background-color: #f8f9fa;
-    } */
-
-    dt {
-      float: right;
-      text-align: right;
-      padding: 0 0 .75rem 0;
-    }
-
-    dd {
-      margin: 3rem 0;
-      /* padding: 1.5rem; */
-    }
-
-    dt.nostyle,
-    dd.nostyle {
-      float: unset;
-      text-align: unset;
-      padding: unset;
-      margin: unset;
-      font-weight: unset;
-    }
-
-    img {
-      width: 5.8rem
-    }
-
-    @media(min-width:576px) {
-      img {
-        width: 6.5rem;
-      }
-    }
-
-    @media(min-width:768px) {
-      img {
-        width: 7.2rem;
-      }
-    }
-  </style>
-  <script src="../assets/scripts/navbar.js"></script>
+  <title>Resume – Damien Le Quéré</title>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/navbar.js" defer></script>
 </head>
 
-<body>
-  <nav id="navbar" class="navbar navbar-expand-md navbar-light py-3 px-2 px-xl-5"
-    style="background-color:rgba(255,255,255,0.9);box-shadow:0 0.5rem 1rem rgba(0,0,0,0.05),inset 0 -1px 0 rgba(0,0,0,0.15);">
+<body class="page-cv">
+  <nav id="navbar" class="navbar sticky-top navbar-expand-md navbar-light py-3 noprint">
     <div class="container">
-      <!--<a class="navbar-brand" href="./index.html">[ Damien Le Quéré ]</a>-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -90,8 +25,8 @@
           <li class="nav-item">
             <a class="nav-link" href="../index.html">Home</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Resume</a>
+          <li class="nav-item">
+            <a class="nav-link active" href="../cv/index.html">Resume <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -99,8 +34,7 @@
               Works
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../publications.html">Publications <span
-                  class="sr-only">(current)</span></a>
+              <a class="dropdown-item" href="../publications.html">Publications</a>
               <a class="dropdown-item" href="../projects.html">Projects</a>
             </div>
           </li>
@@ -108,14 +42,13 @@
             <a class="nav-link" href="../contact.html">Contact</a>
           </li>
         </ul>
-
       </div>
     </div>
   </nav>
 
   <main class="container p-0">
     <div class="py-5 px-3 px-sm-0 px-md-4 px-lg-5">
-      <img src="id.png" alt="id" title="" class="float-right" />
+      <img src="../assets/img/photo.png" alt="Photo of Damien Le Quéré" class="photo float-right" />
       <div id="coordonnees">
         <address>
           <strong>Damien LE QUÉRÉ</strong>
@@ -226,6 +159,7 @@
       </dd>
       </dl> -->
 
+      <dl>
       <dt class="float-right m-3 text-secondary">
         2018&ndash;2023 (5 years)<br />CDI in Lannion
       </dt>
@@ -303,7 +237,7 @@
           two architectural proposals improving the scalability performances
           of the solution.
           <span class="noprint">For more information:
-            <a href="http://damien.le.quere.free.fr/publications.html">thesis summary</a>.</span>
+            <a href="../publications.html">thesis summary</a>.</span>
         </p>
       </dd>
       <dt class="float-right m-3 text-secondary">
@@ -353,7 +287,6 @@
           <li>Result:operational application for the two mission's sites: Chinon and
             Chooz</li>
         </ul>
-        </p>
       </dd>
       </dl>
 
@@ -369,7 +302,6 @@
           <em>&laquo; Diplôme de docteur de l'université Rennes 1, mention informatique &raquo;</em>
           <br /><abbr title="Convention Industrielle de Formation par la REcherche">CIFRE</abbr>
           grant at Orange Labs
-          <br /><span class="badge bg-warning"></span>
         </dd>
 
         <dt class="float-right m-3 text-secondary">2010&ndash;2011<br /><span class="badge bg-warning text-dark">with
@@ -397,7 +329,7 @@
       <ul class="list-group">
         <li class="list-group-item p-4">
           <p class="float-right">
-            <a href="http://damien.le.quere.free.fr/publications/towards_a_large_scale_locarn.pdf"
+            <a href="../files/publications/towards_a_large_scale_locarn.pdf"
               class="btn btn-primary noprint">full access here</a>
           </p>
           <h5 class="card-title">International Workshop</h5>
@@ -411,7 +343,7 @@
         </li>
         <li class="list-group-item p-4">
           <p class="float-right">
-            <a href="http://damien.le.quere.free.fr/publications/locarn_studia_informatica_universalis.pdf"
+            <a href="../files/publications/locarn_studia_informatica_universalis.pdf"
               class="btn btn-primary noprint">full access here</a>
           </p>
           <h5 class="card-title">Journal (Special Issue)</h5>
@@ -425,7 +357,7 @@
         </li>
         <li class="list-group-item p-4">
           <p class="float-right">
-            <a href="http://damien.le.quere.free.fr/publications/scalability_and_performances_evaluation_of_LOCARN.pdf"
+            <a href="../files/publications/scalability_and_performances_evaluation_of_LOCARN.pdf"
               class="btn btn-primary noprint">full access here</a>
           </p>
           <h5 class="card-title">International Conference</h5>
@@ -433,7 +365,7 @@
             <span style="text-decoration: underline">Innovations for Community Services (I4CS 2014)</span>, 14th
             International Conference, pages 1–8
             <br />(June 2014, Reims,France)
-            <span class="badge bg-warning ms-2">Best Paper Award</span>
+            <span class="badge bg-warning ml-2">Best Paper Award</span>
           </p>
 
           <p>
@@ -481,7 +413,7 @@
   <footer class="footer text-center bg-light mt-auto py-3 noprint">
     <div class="container">
       <p>
-        <button href="javascript:void(0);" title="" onclick="window.print();" class="btn btn-outline-secondary">
+        <button type="button" onclick="window.print();" class="btn btn-outline-secondary">
           Print this page
         </button>
       </p>
@@ -491,7 +423,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
-  <script src="../assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

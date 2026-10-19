@@ -65,21 +65,24 @@ cite {
     transform: translateY(calc(-100% - 1.5rem));
 }
 
-/* ---------- Theme switcher (see assets/js/theme.js) ---------- */
+/* ---------- Navbar icons: GitHub link and theme switcher (see assets/js/theme.js) ---------- */
 
-.theme-switcher .nav-link {
+.navbar-icons .nav-link {
     color: var(--bs-navbar-color);
 }
 
-.theme-switcher .nav-link:hover,
-.theme-switcher .nav-link:focus {
+.navbar-icons .nav-link:hover,
+.navbar-icons .nav-link:focus {
     color: var(--bs-navbar-hover-color);
 }
 
-/* The button shows the icon of the current choice */
+.navbar-icons .nav-link svg {
+    vertical-align: -0.2rem;
+}
+
+/* The theme button shows the icon of the current choice */
 .theme-icon {
     display: none;
-    vertical-align: -0.2rem;
 }
 
 [data-theme-choice="light"] .theme-icon-light,

@@ -3,6 +3,19 @@
 :root {
     /* Rendered height of #navbar (py-3 + 40px toggler/links) */
     --navbar-height: 72px;
+    /* Widest .container (navbar and content pages), keeps lines readable on large screens */
+    --content-max-width: 900px;
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: var(--content-max-width);
+    }
+}
+
+/* Long words and URLs in paragraphs wrap instead of overflowing small screens */
+main p {
+    overflow-wrap: break-word;
 }
 
 h1,
@@ -25,8 +38,14 @@ cite {
 }
 
 .lead-lg {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 2rem;
+}
+
+@media (min-width: 576px) {
+    .lead-lg {
+        font-size: 1.5rem;
+    }
 }
 
 /* Icon placed before a button label */
@@ -35,10 +54,17 @@ cite {
     margin-right: 0.5rem;
 }
 
-/* Download buttons floated to the right of a list item */
+/* Download buttons floated to the right of a list item, above it on phones */
 .item-actions {
-    float: right;
-    margin-left: 2em;
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .item-actions {
+        float: right;
+        margin-bottom: 0;
+        margin-left: 2em;
+    }
 }
 
 /* Technical detail list under a description */
@@ -116,7 +142,15 @@ cite {
 .page-cv main,
 .page-publications main,
 .page-projects main {
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    .page-cv main,
+    .page-publications main,
+    .page-projects main {
+        font-size: 1.2rem;
+    }
 }
 
 .page-publications .list-group-item:hover,
@@ -130,7 +164,14 @@ cite {
 
 .page-publications dd,
 .page-projects dd {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .page-publications dd,
+    .page-projects dd {
+        margin-bottom: 3rem;
+    }
 }
 
 /* Publications */
@@ -145,12 +186,18 @@ cite {
 
 /* Projects */
 
+/* Download buttons: above the project on phones, floated right from 576px */
 .page-projects dt {
-    float: right;
-    text-align: right;
-    padding: 0 0 1rem 0;
-    margin-top: 1rem;
-    margin-right: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .page-projects dt {
+        float: right;
+        text-align: right;
+        padding: 0 0 1rem 0;
+        margin: 1rem 1rem 0 0;
+    }
 }
 
 .page-projects h3 {
@@ -161,26 +208,46 @@ cite {
 
 .page-cv h1,
 .page-cv h2 {
-    margin: 3rem 0;
+    margin: 2rem 0;
     text-align: center;
 }
 
 .page-cv .cv-title {
-    margin: 5rem 0;
+    margin: 2.5rem 0;
 }
 
-.page-cv dt {
-    float: right;
-    text-align: right;
-    padding: 0 0 0.75rem 0;
+@media (min-width: 768px) {
+    .page-cv h1,
+    .page-cv h2 {
+        margin: 3rem 0;
+    }
+
+    .page-cv .cv-title {
+        margin: 5rem 0;
+    }
+}
+
+/* Dates: above the entry on phones, floated right from 576px */
+@media (min-width: 576px) {
+    .page-cv dt {
+        text-align: right;
+        padding: 0 0 0.75rem 0;
+    }
 }
 
 .page-cv dd {
-    margin: 3rem 0;
+    margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .page-cv dd {
+        margin: 3rem 0;
+    }
 }
 
 .page-cv .photo {
     width: 5.8rem;
+    margin: 0 0 1rem 1rem;
 }
 
 @media (min-width: 576px) {

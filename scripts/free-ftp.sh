@@ -86,7 +86,7 @@ backup() {
 # Website files: tracked or new files not ignored by git, minus repository tooling.
 site_files() {
   git ls-files --cached --others --exclude-standard |
-    grep -Ev '^(scripts/|\.gitignore$|\.env\.example$|package\.json$|pnpm-lock\.yaml$|README\.md$)' |
+    grep -Ev '^(scripts/|partials/|\.gitignore$|\.env\.example$|package\.json$|pnpm-lock\.yaml$|README\.md$)' |
     while IFS= read -r path; do
       [[ -f $path ]] && echo "$path"
     done

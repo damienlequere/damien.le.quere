@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "live-server --port=3000",
+    "navbar": "node scripts/sync-navbar.mjs",
+    "navbar:check": "node scripts/sync-navbar.mjs --check",
     "ftp:list": "scripts/free-ftp.sh list",
     "ftp:backup": "scripts/free-ftp.sh backup",
     "ftp:upload": "scripts/free-ftp.sh upload",

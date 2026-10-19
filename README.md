@@ -9,6 +9,15 @@ pnpm install
 pnpm dev        # http://localhost:3000, reloads on save
 ```
 
+The navbar lives in `partials/navbar.html`. After editing it, copy it into
+every page (between the `<!-- navbar:start -->` / `<!-- navbar:end -->`
+markers), with the right relative links and active item:
+
+```bash
+pnpm navbar         # rewrite the navbar in each page
+pnpm navbar:check   # only report pages that are out of date
+```
+
 ## Deploy to free.fr (FTP)
 
 `scripts/free-ftp.sh` manages the copy hosted on `ftpperso.free.fr`.
@@ -37,7 +46,7 @@ pnpm ftp:delete   # delete everything on the server, after typing the username t
 ```
 
 `upload` sends the files known to git (tracked, or new and not ignored), minus
-repository tooling (`scripts/`, `package.json`, `README.md`, ...). It never
+repository tooling (`scripts/`, `partials/`, `package.json`, `README.md`, ...). It never
 deletes remote files, so for a clean redeploy:
 
 ```bash
@@ -52,6 +61,7 @@ cv/index.html         Resume (served at /cv/)
 publications.html     Thesis summary and publications
 projects.html         Academic projects
 contact.html          Contact
+partials/navbar.html  Shared navbar template (not uploaded, see `pnpm navbar`)
 
 assets/
   css/style.css       Site styles (shared + per-page, scoped by body class)
@@ -62,7 +72,7 @@ assets/
 files/                Downloadable documents
   cv/  thesis/  publications/  projects/  diplomas/
 
-scripts/free-ftp.sh   FTP list / backup / upload / delete (not uploaded)
+scripts/
+  free-ftp.sh         FTP list / backup / upload / delete (not uploaded)
+  sync-navbar.mjs     Copy the navbar template into each page (not uploaded)
 ```
-
-The navbar is duplicated in each page; keep the copies in sync when editing it.

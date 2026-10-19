@@ -1,5 +1,10 @@
 /* ---------- Base ---------- */
 
+:root {
+    /* Rendered height of #navbar (py-3 + 40px toggler/links) */
+    --navbar-height: 72px;
+}
+
 h1,
 h2 {
     margin: 2rem 0;
@@ -13,6 +18,34 @@ dt {
     margin: 0;
 }
 
+/* Titles of venues, journals and the thesis */
+cite {
+    font-style: inherit;
+    text-decoration: underline;
+}
+
+.lead-lg {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Icon placed before a button label */
+.btn-icon {
+    vertical-align: -0.15rem;
+    margin-right: 0.5rem;
+}
+
+/* Download buttons floated to the right of a list item */
+.item-actions {
+    float: right;
+    margin-left: 2em;
+}
+
+/* Technical detail list under a description */
+.details {
+    font-size: 0.9em;
+}
+
 @media print {
     .noprint {
         display: none;
@@ -24,16 +57,27 @@ dt {
 .navbar {
     background-color: #fff;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-    transition: top 0.3s;
+    transition: transform 0.3s;
+}
+
+/* Move up by the navbar's own height plus its shadow */
+.navbar-hidden {
+    transform: translateY(calc(-100% - 1.5rem));
 }
 
 /* ---------- Home & contact: content centred in the viewport ---------- */
 
 .v-center {
-    margin-top: -72px;
+    margin-top: calc(-1 * var(--navbar-height));
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.home-intro {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /* ---------- Content pages: resume, publications, projects ---------- */
@@ -58,6 +102,16 @@ dt {
     margin-bottom: 3rem;
 }
 
+/* Publications */
+
+.page-publications .logos img:not(:last-child) {
+    margin-right: 2rem;
+}
+
+.page-publications .thesis-downloads {
+    margin-top: 2rem;
+}
+
 /* Projects */
 
 .page-projects dt {
@@ -78,6 +132,10 @@ dt {
 .page-cv h2 {
     margin: 3rem 0;
     text-align: center;
+}
+
+.page-cv .cv-title {
+    margin: 5rem 0;
 }
 
 .page-cv dt {

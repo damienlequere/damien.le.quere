@@ -150,7 +150,8 @@ cite {
 }
 
 @media (min-width: 768px) {
-    .page-cv main,
+
+    /* .page-cv main, */
     .page-publications main,
     .page-projects main {
         font-size: 1.2rem;
@@ -172,6 +173,7 @@ cite {
 }
 
 @media (min-width: 768px) {
+
     .page-publications dd,
     .page-projects dd {
         margin-bottom: 3rem;
@@ -221,6 +223,7 @@ cite {
 }
 
 @media (min-width: 768px) {
+
     .page-cv h1,
     .page-cv h2 {
         margin: 3rem 0;

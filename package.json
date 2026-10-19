@@ -8,6 +8,7 @@
     "ftp:list": "scripts/free-ftp.sh list",
     "ftp:backup": "scripts/free-ftp.sh backup",
     "ftp:upload": "scripts/free-ftp.sh upload",
+    "ftp:deploy": "scripts/free-ftp.sh deploy",
     "ftp:delete": "scripts/free-ftp.sh delete"
   },
   "devDependencies": {

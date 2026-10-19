@@ -43,16 +43,18 @@ Precedence: environment, then `.env.local`, then `.env`. `FTP_USER` defaults to
 pnpm ftp:list     # print every file and directory on the server
 pnpm ftp:backup   # download everything to backup/free.fr/ (git-ignored)
 pnpm ftp:upload   # upload the site, overwriting remote copies
+pnpm ftp:deploy   # upload, then delete remote files that are no longer part of the site
 pnpm ftp:delete   # delete everything on the server, after typing the username to confirm
 ```
 
 `upload` sends the files known to git (tracked, or new and not ignored), minus
 repository tooling (`scripts/`, `partials/`, `package.json`, `README.md`, ...). It never
-deletes remote files, so for a clean redeploy:
+deletes remote files.
 
-```bash
-pnpm ftp:backup && pnpm ftp:delete && pnpm ftp:upload
-```
+`deploy` is the usual way to publish: it uploads first, so the site is never
+missing a file, then lists the remote files that are not in that set (and the
+directories left empty) and deletes them after a `y/N` confirmation. Free's
+`000-LISEZ-MOI-PAGES-PERSO-FREE.TXT` is always kept.
 
 ## Layout
 

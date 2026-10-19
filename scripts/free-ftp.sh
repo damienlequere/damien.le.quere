@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Manage the old copy of the site hosted on Free's personal pages (ftpperso.free.fr).
 #
-# Usage: scripts/free-ftp.sh list|backup|upload|delete
+# Usage: scripts/free-ftp.sh list|backup|upload|deploy|delete
 #
 #   list    print every file and directory on the server
 #   backup  download every file into $BACKUP_DIR (default: backup/free.fr)
 #   upload  upload the website (files known to git, minus dev tooling), overwriting remote copies
+#   deploy  upload, then delete remote files that are not part of the website, after a y/N confirmation
 #   delete  delete everything on the server, after a typed confirmation
 #
 # Credentials come from the environment, or from git-ignored .env / .env.local files
@@ -31,6 +32,8 @@ eval "$env_before"
 FTP_HOST=${FTP_HOST:-ftpperso.free.fr}
 FTP_USER=${FTP_USER:-damien.le.quere}
 BACKUP_DIR=${BACKUP_DIR:-backup/free.fr}
+# Remote files that deploy never deletes, although they are not part of the website.
+KEEP_REMOTE=/000-LISEZ-MOI-PAGES-PERSO-FREE.TXT
 : "${FTP_PASSWORD:?Set FTP_PASSWORD in the environment, .env or .env.local}"
 
 # curl with credentials passed through a config fd, so the password never shows in `ps`.
@@ -104,8 +107,57 @@ upload() {
   echo "Uploaded $count files to $FTP_HOST"
 }
 
+# Delete the entries listed in $1, one per line, children before their parent directory.
+remove() {
+  local path cmd
+  while IFS= read -r path; do
+    if [[ $path == */ ]]; then cmd="RMD ${path%/}"; else cmd="DELE $path"; fi
+    ftp --list-only -o /dev/null -Q "$cmd" "$(url /)"
+    echo "deleted $path"
+  done <<<"$1"
+}
+
+# Remote entries that are not part of the website: files missing from site_files,
+# and directories containing none of them.
+stale_entries() {
+  local site entry
+  site=$(site_files | sed 's|^|/|')
+  while IFS= read -r entry; do
+    [[ -z $entry || $entry == "$KEEP_REMOTE" ]] && continue
+    if [[ $entry == */ ]]; then
+      awk -v dir="$entry" 'index($0, dir) == 1 { found = 1; exit } END { exit !found }' <<<"$site" ||
+        echo "$entry"
+    else
+      grep -Fxq -- "$entry" <<<"$site" || echo "$entry"
+    fi
+  done <<<"$(walk /)"
+}
+
+deploy() {
+  local stale answer
+  upload
+
+  stale=$(stale_entries)
+  if [[ -z $stale ]]; then
+    echo "No stale files on $FTP_HOST."
+    return
+  fi
+
+  echo
+  echo "$stale"
+  echo
+  echo "$(wc -l <<<"$stale") entries above are not part of the website."
+  read -rp "Delete them from $FTP_HOST? [y/N] " answer
+  if [[ $answer != [yY] ]]; then
+    echo "Kept them. The website itself is deployed."
+    return
+  fi
+  remove "$stale"
+  echo "Done."
+}
+
 delete() {
-  local entries path cmd answer
+  local entries answer
   entries=$(walk /)
   if [[ -z $entries ]]; then
     echo "Nothing to delete on $FTP_HOST."
@@ -121,18 +173,14 @@ delete() {
     exit 1
   fi
 
-  while IFS= read -r path; do
-    if [[ $path == */ ]]; then cmd="RMD ${path%/}"; else cmd="DELE $path"; fi
-    ftp --list-only -o /dev/null -Q "$cmd" "$(url /)"
-    echo "deleted $path"
-  done <<<"$entries"
+  remove "$entries"
   echo "Done."
 }
 
 case ${1:-} in
-  list | backup | upload | delete) "$1" ;;
+  list | backup | upload | deploy | delete) "$1" ;;
   *)
-    echo "Usage: $0 list|backup|upload|delete" >&2
+    echo "Usage: $0 list|backup|upload|deploy|delete" >&2
     exit 1
     ;;
 esac

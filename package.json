@@ -1,0 +1,10 @@
+{
+  "name": "damien-le-quere",
+  "private": true,
+  "scripts": {
+    "dev": "live-server --port=3000"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

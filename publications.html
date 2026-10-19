@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Resume &ndash; Damien Le Quéré" />
+  <meta name="author" content="Damien Le Quéré" />
+  <title>Damien Le Quéré 's pages</title>
+  <link href="../assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen" title="Normal" />
+  <style>
+    main {
+      font-size: 1.2rem
+    }
+
+    .list-group-item:hover {
+      background-color: #f8f9fa;
+    }
+
+    .list-group-item {
+      line-height: 2rem;
+    }
+
+    dd {
+      margin-bottom: 3rem;
+    }
+
+    /* dd:hover {
+      background-color: #f8f9fa;
+    } */
+  </style>
+  <script src="./assets/scripts/navbar.js"></script>
+</head>
+
+<body>
+  <nav id="navbar" class="navbar sticky-top navbar-expand-md navbar-light py-3"
+    style="background-color:rgba(255,255,255,1);box-shadow:0 0.5rem 1rem rgba(0,0,0,0.05),inset 0 -1px 0 rgba(0,0,0,0.15);">
+    <div class="container">
+      <!--<a class="navbar-brand" href="./index.html">[ Damien Le Quéré ]</a>-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cv/index.html">Resume</a>
+          </li>
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Works
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item active" href="publications.html">Publications <span
+                  class="sr-only">(current)</span></a>
+              <a class="dropdown-item" href="projects.html">Projects</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <h1>
+      Conception et étude des performances d’une solution auto-configurable pour les réseaux de transport du futur
+    </h1>
+
+    <!--<p>
+          <img src="./img/univ-rennes.png" alt="Univ Rennes 1 Logo" title="" style="height:50px;"/>
+          <img src="./img/orange.png" alt="Orange Logo" title="" style="height:50px;"/>
+      </p>-->
+
+    <p class="lead my-5" style="font-size:1.5rem;">
+      Dans cette thèse, nous étudions LOCARN : &laquo;&nbsp;Low Opex &amp; Capex Architecture for Resilient
+      Networks&nbsp;&raquo;. LOCARN est une architecture réseaux paquet alternative focalisée sur la simplicité : (i)
+      simplicité de fonctionnement car elle
+      s'appuie sur un petit nombre de composants réseaux ; (ii) simplicité de gestion en réduisant drastiquement
+      l’effort de déploiement/maintenance d'un l'opérateur. Compte tenu de leur complexification ces dernières
+      décennies, nous considérons
+      les réseaux de transport des opérateurs comme cas d’application privilégié. LOCARN se propose de simplifier le
+      fonctionnement de ces réseaux tout en promettant des réductions drastiques d'<abbr
+        title="Operational EXPenditure">OPEX</abbr>
+      et de <abbr title="Capital EXPenditure">CAPEX</abbr>.
+    </p>
+
+    <!--<img src="https://www.univ-rennes1.fr/sites/www.univ-rennes1.fr/files/logo_ur1_gris.png" alt=""/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/langfr-150px-Orange_logo.svg.png" alt=""/>-->
+
+    <div class="mb-5">
+      <img src="./img/renne1_logo.png" class="img-fluid" alt="" width="170rem" style="margin-right: 2rem" />
+      <img src="./img/orange_logo.png" class="img-fluid" alt="" width="85rem" />
+    </div>
+    <hr class="w-100" />
+    <div class="mt-4">
+      <h2>Introduction</h2>
+      <p>
+        Les fonctions qui composent un réseau de télécommunication peuvent être classées en deux groupes : (i) le
+        groupe de transport qui couvre le transfert de toutes les informations de télécommunication d'un point à un
+        autre; (ii) le groupe de commande qui
+        gère divers systèmes et services auxiliaires ainsi que les fonctions de maintenance. Du point de vue
+        transport, LOCARN établit des communications point-à-point en mode paquet à travers un domaine réseau défini
+        pour une couche &laquo;&nbsp;cliente&nbsp;&raquo;
+        (qui peut être une autre couche réseau ou bien une couche applicative) et s’appuyant sur une couche réseaux
+        serveur. LOCARN est une &laquo;&nbsp;architecture&nbsp;&raquo; car elle implique le plan de transport, le plan
+        de commande
+        et les interactions entre ces deux plans. Le service de transport offert aux clients est basé sur
+        l’auto-acheminement des paquets. Les communications point-à-point sont établies et maintenues dans le plan de
+        transfert par le plan de
+        contrôle via des mécanismes de routage et maintenance dans le nœud source. Ces mécanismes sont basés sur une
+        inondation intelligente du réseau. Cette conception originale permet à l’architecture d’avoir des propriétés
+        de résilience
+        et d’auto-adaptation en toute simplicité.
+      </p>
+    </div>
+
+    <h2>Fonctionnement de l'architecture</h2>
+
+    <dl>
+      <dd>
+        <h3 class="mb-3">U-PLAN</h3>
+        <p class="my-0 py-0">
+          <em>Un plan de transfert basé sur des paquets auto-acheminés</em> – Notre architecture utilise des paquets
+          pour transporter l’information cliente, elle définit à cette fin un datagramme spécifique pour les paquets
+          de données. Comme
+          pour n’importe quel réseau paquet, les paquets de données sont acheminés d’un point à un autre du réseau par
+          des processus d’aiguillage successifs réalisés au niveau de chaque nœud – un processus d’aiguillage
+          détermine l’interface
+          de sortie du paquet, ou &laquo;&nbsp;prochain saut&nbsp;&raquo;.
+        </p>
+        </br>
+        <p>
+          Dans LOCARN, les paquets sont dits &laquo;&nbsp;auto-acheminés&nbsp;&raquo; dans la mesure où le prochain
+          saut d’un paquet est uniquement basé sur des informations contenus dans le paquet lui-même. Le nœud d’entrée
+          du domaine, en charge de l’encapsulation,
+          va intégrer au paquet les informations du chemin à suivre jusqu’à la destination, typiquement une liste
+          d’interface de sortie à emprunter. Ainsi ce plan de transfert est à la fois déterministe et
+          &laquo;&nbsp;sans état&nbsp;&raquo;
+          dans les nœuds intermédiaires, contrairement aux autres réseaux paquets impliquant la mémorisation de tables
+          de transferts.
+        </p>
+      </dd>
+
+      <dd>
+        <h3 class="mb-3">C-PLAN</h3>
+        <p class="my-0 py-0">
+          <em>Un plan de contrôle basé sur des inondations intelligentes du réseau</em> – Notre architecture est basée
+          sur une inondation intelligente du réseau pour la découverte des chemins. La découverte/sélection d’un
+          chemin est propre
+          à chaque &laquo;&nbsp;service&nbsp;&raquo; (communication cliente à établir). Pour établir une communication
+          point-à-point, un des deux nœuds est considéré comme source de la communication et va déclencher
+          l’inondation du réseau
+          avec des paquets spécifiques de découverte, mémorisant chacun leur chemin parcouru. Le nœud considéré comme
+          destination va alors recevoir un ensemble de paquets de découvertes correspondant à des chemins potentiels
+          depuis la source.
+          En répondant à chaque paquet de découverte (à l’aide d’un autre type de paquet), il va permettre à la source
+          de récupérer un ensemble de chemins disponibles et distincts les un des autres. Il lui suffira ensuite de
+          choisir le meilleur
+          d’entre eux.
+        </p><br />
+        <p>Les chemins sont connus au minimum comme une liste d’interfaces de sortie, mais des informations
+          supplémentaires sur les liens parcourus peuvent être récupérées (délai moyen, bande passante disponible). La
+          communication est établie
+          instantanément dès lors qu’un chemin est sélectionné par le nœud source. En effet, nul besoin de la signaler
+          à aucun autre nœud l’établissement de la connexion : celle-ci est établie dès que le nœud source est capable
+          d’intégrer
+          les informations d’auto-acheminement aux paquets client entrants. LOCARN fonctionne donc suivant un routage
+          dit &laquo;&nbsp;par la source&nbsp;&raquo; qui n’implique aucune complication, tant au niveau algorithmique
+          : la découverte
+          remplace le calcul ; qu’au niveau de la mémoire : un nœud ne mémorise que des chemins réellement utilisés et
+          dont il est la source .
+        </p>
+        <br />
+        <p>Par ailleurs ce type de routage autorise la sélection de chemins élastiques (pas nécessairement les plus
+          courts en nombre de sauts) permettant ainsi des adaptations judicieuses du plan de transfert en fonction de
+          l’évolution du réseau.
+          En effet, selon les règles de sélection des meilleurs chemins l’architecture est capable d’adapter ses
+          chemins de façon opportuniste pour optimiser les performances selon les priorités du routage : délais de
+          bout en bout ou répartition
+          de la bande passante par exemple.
+        </p>
+      </dd>
+
+
+      <dd>
+        <h3 class="mb-3">M-PLAN</h3>
+        <p class="my-0 py-0">
+          <em>La maintenance des communications assurée de bout en bout</em> – Pour obtenir un niveau élevé de
+          résilience des communications, l’architecture prévoie une fois que ces dernières sont établies, des échanges
+          très fréquents de
+          (petits) paquets spécifiques pour la maintenance. Ces échanges permettent d’attester de la viabilité d’une
+          connexion à chaque instant. Au bout d’un intervalle de temps correspondant à trois paquets non reçus, un
+          nœud source va
+          considérer une connexion comme perdue et va relancer un processus de routage pour la restaurer (inondation
+          et sélection d’un chemin). En fonctionnant ainsi, on est capable de rétablir une communication dans des
+          délais très courts
+          qui permettent largement d’atteindre les exigences de disponibilité traditionnelles des réseaux de transport
+          (en moins de 50ms).
+        </p><br />
+        <p>Par ailleurs les paquets de maintenance sont acheminés selon le même processus que les paquets de données,
+          permettant de conserver un plan de transfert très simple. La résilience de l’architecture est ainsi basée
+          sur la réactivité
+          plutôt que sur la configuration (complexe) de mécanismes de protections utilisées dans les autres
+          technologies de transports et basée sur la détermination d’un chemin/lien de secours de façon proactive.
+        </p>
+      </dd>
+      <div class="text-center" style="margin-top: 2rem">
+        <div role="group" aria-label="" style="margin-top: 2rem">
+          <a href="./manuscrit_final.pdf" class="btn btn-lg btn-primary mx-3">Manuscrit</a>
+          <a href="./presentation_finale.pptx" class="btn btn-lg btn-primary mx-3">Slides</a>
+        </div>
+      </div>
+
+      <h2>Publications</h2>
+
+      <ul class="list-group">
+        <li class="list-group-item p-4">
+          <div class="btn-group" role="group" aria-label="" style="float: right; margin-left: 2em">
+            <a href="http://damien.le.quere.free.fr/publications/towards_a_large_scale_locarn.pdf"
+              class="btn btn-primary">article</a>
+            <a href="./publications/poster_globecom_2014.pdf" class="btn btn-primary">poster</a>
+          </div>
+          <h5 class="card-title">International Workshop</h5>
+          <p class="card-text">
+            D. Le Quere, C. Betoule, R. Clavier, Y. Hadjadj-Aoul, A. Ksentini,
+            and G. Thouenon.
+            <br /><strong><a
+                href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=7063505&amp;isnumber=7063320"
+                title="access IEEE Xplore" target="_blank">&laquo;&nbsp;Towards a Large Scale
+                LOCARN&nbsp;&raquo;</a></strong>. <br /><span style="text-decoration: underline">IEEE Globecom
+              Workshop on Research and Standards</span>
+            (Dec 2014, Austin, United States).
+          </p>
+        </li>
+        <li class="list-group-item p-4">
+          <p style="float: right">
+            <a href="http://damien.le.quere.free.fr/publications/locarn_studia_informatica_universalis.pdf"
+              class="btn btn-primary noprint" target="_blank">article</a>
+          </p>
+          <h5 class="card-title">Journal (Special Issue)</h5>
+          <p class="card-text">
+            D. Le Quere, C. Betoule, R. Clavier, Y. Hadjadj-Aoul, A. Ksentini,
+            and G. Thouenon.
+            <br /><strong>&laquo;&nbsp;Presentation &amp; evaluation of LOCARN: low opex and
+              capex architecture for resilient networks&nbsp;&raquo;</strong>. <br /><span
+              style="text-decoration: underline">Studia Informatica Universalis</span>, pages 74-104 (12 June 2014).
+          </p>
+        </li>
+        <li class="list-group-item p-4">
+          <p style="float: right">
+            <a href="http://damien.le.quere.free.fr/publications/scalability_and_performances_evaluation_of_LOCARN.pdf"
+              class="btn btn-primary">article</a>
+            <!--<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&amp;arnumber=6860545&amp;sortType%3Dasc_p_Sequence%26filter%3DAND%28p_IS_Number%3A6860533%29" class="btn btn-primary">IEEE Xplore</a>-->
+          </p>
+          <h5 class="card-title">International Conference</h5>
+          <p class="card-text">
+            <span class="badge bg-warning">Best Paper Award</span>
+            <br />D. Le Quere, C. Betoule, R. Clavier, Y. Hadjadj-Aoul, A Ksentini, and G. Thouenon. <br /><strong><a
+                href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&amp;arnumber=6860545&amp;sortType%3Dasc_p_Sequence%26filter%3DAND%28p_IS_Number%3A6860533%29"
+                title="access IEEE Xplore">&laquo;&nbsp;Scalability &amp; performances evaluation of LOCARN:
+                low opex and capex architecture for resilient networks
+                &nbsp;&raquo;</a></strong>. <br /><span style="text-decoration: underline">Innovations for Community
+              Services (I4CS 2014)</span>, 14th International Conference, pages 1–8 (June 2014, Reims,
+            France).
+          </p>
+        </li>
+      </ul>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

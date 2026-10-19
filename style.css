@@ -1,0 +1,36 @@
+@media print {
+    .noprint {
+        display: none;
+    }
+}
+
+.starter-template {
+    padding: 3rem;
+}
+
+body {
+    padding-top: 0rem;
+}
+
+h1,
+h2 {
+    margin: 2rem 0;
+}
+
+h4 {
+    margin: 0;
+}
+
+dt {
+    margin: 0;
+}
+
+span.date {
+    float: right;
+    text-align: right;
+    margin: 0 0 1em 2em;
+}
+
+.navbar {
+    transition: top 0.3s;
+}

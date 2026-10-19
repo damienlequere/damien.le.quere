@@ -2,7 +2,11 @@
   "name": "damien-le-quere",
   "private": true,
   "scripts": {
-    "dev": "live-server --port=3000"
+    "dev": "live-server --port=3000",
+    "ftp:list": "scripts/free-ftp.sh list",
+    "ftp:backup": "scripts/free-ftp.sh backup",
+    "ftp:upload": "scripts/free-ftp.sh upload",
+    "ftp:delete": "scripts/free-ftp.sh delete"
   },
   "devDependencies": {
     "live-server": "^1.2.2"

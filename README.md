@@ -1,6 +1,7 @@
 # damien.le.quere
 
-Personal website and resume. Plain static HTML with Bootstrap 4, no build step.
+Personal website and resume. Plain static HTML with Bootstrap 5.3, no build step. Light / dark / auto theme
+switcher in the navbar.
 
 ## Develop
 
@@ -66,8 +67,9 @@ partials/navbar.html  Shared navbar template (not uploaded, see `pnpm navbar`)
 assets/
   css/style.css       Site styles (shared + per-page, scoped by body class)
   js/navbar.js        Hide navbar on scroll down
+  js/theme.js         Light / dark / auto theme, loaded in <head> to avoid a flash
   img/                Logos and photo
-  vendor/bootstrap/   Bootstrap 4.5.3 (css + js bundle)
+  vendor/bootstrap/   Bootstrap 5.3.8 (css + js bundle, no jQuery)
 
 files/                Downloadable documents
   cv/  thesis/  publications/  projects/  diplomas/

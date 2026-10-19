@@ -7,6 +7,7 @@
   <meta name="description" content="Damien Le Quéré – software engineer" />
   <meta name="author" content="Damien Le Quéré" />
   <title>Resume – Damien Le Quéré</title>
+  <script src="../assets/js/theme.js"></script>
   <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <script src="../assets/js/navbar.js" defer></script>
@@ -14,23 +15,63 @@
 
 <body class="page-cv">
   <!-- navbar:start -->
-  <nav id="navbar" class="navbar sticky-top navbar-expand-md navbar-light py-3 noprint">
+  <nav id="navbar" class="navbar sticky-top navbar-expand-md py-3 noprint">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="icon-sun" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+      </symbol>
+      <symbol id="icon-moon" viewBox="0 0 16 16">
+        <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z" />
+      </symbol>
+      <symbol id="icon-auto" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16" />
+      </symbol>
+    </svg>
+
     <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <!-- Theme switcher: last on wide screens, next to the toggler on small ones (see assets/js/theme.js) -->
+      <div class="dropdown theme-switcher order-md-last ms-auto">
+        <button class="nav-link dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+          aria-label="Colour theme">
+          <svg width="18" height="18" fill="currentColor" class="theme-icon theme-icon-light"><use href="#icon-sun" /></svg>
+          <svg width="18" height="18" fill="currentColor" class="theme-icon theme-icon-dark"><use href="#icon-moon" /></svg>
+          <svg width="18" height="18" fill="currentColor" class="theme-icon theme-icon-auto"><use href="#icon-auto" /></svg>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <button type="button" class="dropdown-item" data-theme-value="light" aria-pressed="false">
+              <svg width="16" height="16" fill="currentColor" class="btn-icon"><use href="#icon-sun" /></svg>Light
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item" data-theme-value="dark" aria-pressed="false">
+              <svg width="16" height="16" fill="currentColor" class="btn-icon"><use href="#icon-moon" /></svg>Dark
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item" data-theme-value="auto" aria-pressed="false">
+              <svg width="16" height="16" fill="currentColor" class="btn-icon"><use href="#icon-auto" /></svg>Auto
+            </button>
+          </li>
+        </ul>
+      </div>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto text-center">
+        <ul class="navbar-nav me-auto text-center">
           <li class="nav-item">
             <a class="nav-link" href="../index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="../cv/index.html">Resume <span class="sr-only">(current)</span></a>
+            <a class="nav-link active" href="../cv/index.html">Resume <span class="visually-hidden">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Works
             </a>
@@ -50,7 +91,7 @@
 
   <main class="container p-0">
     <div class="py-5 px-3 px-sm-0 px-md-4 px-lg-5">
-      <img src="../assets/img/photo.png" alt="Photo of Damien Le Quéré" class="photo float-right" />
+      <img src="../assets/img/photo.png" alt="Photo of Damien Le Quéré" class="photo float-end" />
       <div id="coordonnees">
         <address>
           <strong>Damien LE QUÉRÉ</strong>
@@ -58,7 +99,7 @@
           <br />
           <a href="mailto:damien.lequere@gmail.com">damien.lequere@gmail.com</a>
           <br />
-          <span class="badge bg-secondary text-light">
+          <span class="badge text-bg-secondary">
             last update on april 2025
           </span>
         </address>
@@ -108,12 +149,12 @@
 
       <div class="cv-title">
         <h1 class="display-4 pb-0 mb-0">Software Engineer</h1>
-        <h2 class="display-5 pt-0 mt-0 text-secondary">
+        <h2 class="pt-0 mt-0 text-body-secondary">
           Fullstack Web Development
         </h2>
       </div>
 
-      <section class="card p-2 p-sm-3 p-lg-5 text-dark border-0" id="skills-section">
+      <section class="card p-2 p-sm-3 p-lg-5 border-0" id="skills-section">
         <div class="card-body p-0">
           <div class="row">
             <div class="col-md">
@@ -148,7 +189,7 @@
       </div> -->
 
 
-      <h2 class="text-secondary">Experiences</h2>
+      <h2 class="text-body-secondary">Experiences</h2>
 
       <!-- <dt class="float-right m-3 text-secondary">
         2023&ndash;present<br />(2 years)
@@ -162,7 +203,7 @@
       </dl> -->
 
       <dl>
-      <dt class="float-right m-3 text-secondary">
+      <dt class="float-end m-3 text-body-secondary">
         2018&ndash;2023 (5 years)<br />CDI in Lannion
       </dt>
       <dd class="rounded">
@@ -190,7 +231,7 @@
           </ul>
         </div>
       </dd>
-      <dt class="float-right m-3 text-secondary">
+      <dt class="float-end m-3 text-body-secondary">
         2016&ndash;2017 (1.5 year)<br />CDI in Nozay-Villarceaux
       </dt>
       <dd class="rounded">
@@ -215,7 +256,7 @@
           <li>continuous integration : Jenkins, JIRA</li>
         </ul>
       </dd>
-      <dt class="float-right m-3 text-secondary">
+      <dt class="float-end m-3 text-body-secondary">
         2011&ndash;2015 (3 years)<br />Thesis in Lannion
       </dt>
       <dd class="rounded">
@@ -242,7 +283,7 @@
             <a href="../publications.html">thesis summary</a>.</span>
         </p>
       </dd>
-      <dt class="float-right m-3 text-secondary">
+      <dt class="float-end m-3 text-body-secondary">
         2011 (6 months)<br />Internship in Lannion
       </dt>
       <dd class="rounded">
@@ -270,7 +311,7 @@
           </li>
         </ul>
       </dd>
-      <dt class="float-right m-3 text-secondary">
+      <dt class="float-end m-3 text-body-secondary">
         2010 (6 months)<br />Internship in Chinon
       </dt>
       <dd class="rounded">
@@ -292,45 +333,45 @@
       </dd>
       </dl>
 
-      <h2 class="text-secondary">Education</h2>
+      <h2 class="text-body-secondary">Education</h2>
       <dl>
-        <dt class="float-right m-3 text-secondary">
+        <dt class="float-end m-3 text-body-secondary">
           2012&ndash;2015<br />
-          <span class="badge bg-warning text-dark">first class honours</span>
+          <span class="badge text-bg-warning">first class honours</span>
         </dt>
         <dd class="rounded">
-          <h4 class="mb-3">PhD in Computer Science<br /><span class="text-secondary">Computer Networks - Rennes 1
+          <h4 class="mb-3">PhD in Computer Science<br /><span class="text-body-secondary">Computer Networks - Rennes 1
               Science University</span></h4>
           <em>&laquo; Diplôme de docteur de l'université Rennes 1, mention informatique &raquo;</em>
           <br /><abbr title="Convention Industrielle de Formation par la REcherche">CIFRE</abbr>
           grant at Orange Labs
         </dd>
 
-        <dt class="float-right m-3 text-secondary">2010&ndash;2011<br /><span class="badge bg-warning text-dark">with
+        <dt class="float-end m-3 text-body-secondary">2010&ndash;2011<br /><span class="badge text-bg-warning">with
             distinctions</span></dt>
         <dd class="rounded">
-          <h4 class="mb-3">Master degree in Computer Science<br /><span class="text-secondary">(Computer
+          <h4 class="mb-3">Master degree in Computer Science<br /><span class="text-body-secondary">(Computer
               Networks)</span></h4>
           <em>&laquo; Master 2 pro informatique : Ingénierie des Réseaux &raquo;</em>
           <br />Degree from the <em>Rennes 1 University</em>
         </dd>
 
-        <dt class="float-right m-3 text-secondary">2009&ndash;2010<br />
-          <span class="badge bg-warning text-dark">with distinctions</span>
+        <dt class="float-end m-3 text-body-secondary">2009&ndash;2010<br />
+          <span class="badge text-bg-warning">with distinctions</span>
         </dt>
         <dd class="rounded">
           <h4 class="mb-3">Master degree in Computer Science
-            <br /><span class="text-secondary">Software Engineering - Angers Science University</span>
+            <br /><span class="text-body-secondary">Software Engineering - Angers Science University</span>
           </h4>
           <p>&laquo; Conception et Développement de Solutions Informatiques Intégrées &raquo;</p>
         </dd>
 
       </dl>
 
-      <h2 class="text-secondary">Publications</h2>
+      <h2 class="text-body-secondary">Publications</h2>
       <ul class="list-group">
         <li class="list-group-item p-4">
-          <p class="float-right">
+          <p class="float-end">
             <a href="../files/publications/towards_a_large_scale_locarn.pdf"
               class="btn btn-primary noprint">full access here</a>
           </p>
@@ -344,7 +385,7 @@
 
         </li>
         <li class="list-group-item p-4">
-          <p class="float-right">
+          <p class="float-end">
             <a href="../files/publications/locarn_studia_informatica_universalis.pdf"
               class="btn btn-primary noprint">full access here</a>
           </p>
@@ -358,7 +399,7 @@
           </p>
         </li>
         <li class="list-group-item p-4">
-          <p class="float-right">
+          <p class="float-end">
             <a href="../files/publications/scalability_and_performances_evaluation_of_LOCARN.pdf"
               class="btn btn-primary noprint">full access here</a>
           </p>
@@ -367,7 +408,7 @@
             <cite>Innovations for Community Services (I4CS 2014)</cite>, 14th
             International Conference, pages 1–8
             <br />(June 2014, Reims,France)
-            <span class="badge bg-warning ml-2">Best Paper Award</span>
+            <span class="badge text-bg-warning ms-2">Best Paper Award</span>
           </p>
 
           <p>
@@ -378,7 +419,7 @@
         </li>
       </ul>
 
-      <h2 class="text-secondary">Languages</h2>
+      <h2 class="text-body-secondary">Languages</h2>
       <ul>
         <li>
           English :
@@ -388,7 +429,7 @@
         </li>
       </ul>
 
-      <h2 class="text-secondary">Interests</h2>
+      <h2 class="text-body-secondary">Interests</h2>
       <ul>
         <!-- <li><em>Emacs</em> / <em>Lisp</em></li>
         <li>
@@ -412,7 +453,7 @@
       </ul>
     </div>
   </main>
-  <footer class="footer text-center bg-light mt-auto py-3 noprint">
+  <footer class="footer text-center bg-body-tertiary mt-auto py-3 noprint">
     <div class="container">
       <p>
         <button type="button" onclick="window.print();" class="btn btn-outline-secondary">
@@ -421,10 +462,6 @@
       </p>
     </div>
   </footer>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 

@@ -55,14 +55,42 @@ cite {
 /* ---------- Navbar (hidden on scroll down, see assets/js/navbar.js) ---------- */
 
 .navbar {
-    background-color: #fff;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    background-color: var(--bs-body-bg);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 var(--bs-border-color-translucent);
     transition: transform 0.3s;
 }
 
 /* Move up by the navbar's own height plus its shadow */
 .navbar-hidden {
     transform: translateY(calc(-100% - 1.5rem));
+}
+
+/* ---------- Theme switcher (see assets/js/theme.js) ---------- */
+
+.theme-switcher .nav-link {
+    color: var(--bs-navbar-color);
+}
+
+.theme-switcher .nav-link:hover,
+.theme-switcher .nav-link:focus {
+    color: var(--bs-navbar-hover-color);
+}
+
+/* The button shows the icon of the current choice */
+.theme-icon {
+    display: none;
+    vertical-align: -0.2rem;
+}
+
+[data-theme-choice="light"] .theme-icon-light,
+[data-theme-choice="dark"] .theme-icon-dark,
+[data-theme-choice="auto"] .theme-icon-auto {
+    display: inline;
+}
+
+/* Without JavaScript the switcher cannot work */
+:root:not([data-theme-choice]) .theme-switcher {
+    display: none;
 }
 
 /* ---------- Home & contact: content centred in the viewport ---------- */
@@ -90,7 +118,7 @@ cite {
 
 .page-publications .list-group-item:hover,
 .page-projects .list-group-item:hover {
-    background-color: #f8f9fa;
+    background-color: var(--bs-tertiary-bg);
 }
 
 .page-publications .list-group-item {

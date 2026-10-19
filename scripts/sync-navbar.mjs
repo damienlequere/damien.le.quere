@@ -46,7 +46,7 @@ for (const [page, active] of Object.entries(pages)) {
     .replaceAll("{{root}}", prefix ? `${prefix}/` : "")
     .replace(/\{\{active:(\w+)\}\}/g, (_, key) => (active.includes(key) ? " active" : ""))
     .replace(/\{\{current:(\w+)\}\}/g, (_, key) =>
-      active.includes(key) ? ' <span class="sr-only">(current)</span>' : "",
+      active.includes(key) ? ' <span class="visually-hidden">(current)</span>' : "",
     );
 
   const updated = `${html.slice(0, start + START.length)}\n${navbar}\n  ${html.slice(end)}`;

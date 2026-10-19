@@ -43,6 +43,7 @@ Precedence: environment, then `.env.local`, then `.env`. `FTP_USER` defaults to
 pnpm ftp:list     # print every file and directory on the server
 pnpm ftp:backup   # download everything to backup/free.fr/ (git-ignored)
 pnpm ftp:upload   # upload the site, overwriting remote copies
+pnpm ftp:upload cv/index.html   # upload only the given files
 pnpm ftp:deploy   # upload, then delete remote files that are no longer part of the site
 pnpm ftp:delete   # delete everything on the server, after typing the username to confirm
 ```

@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Manage the old copy of the site hosted on Free's personal pages (ftpperso.free.fr).
 #
-# Usage: scripts/free-ftp.sh list|backup|upload|deploy|delete
+# Usage: scripts/free-ftp.sh list|backup|upload [file...]|deploy|delete
 #
 #   list    print every file and directory on the server
 #   backup  download every file into $BACKUP_DIR (default: backup/free.fr)
-#   upload  upload the website (files known to git, minus dev tooling), overwriting remote copies
+#   upload  upload the website (files known to git, minus dev tooling), overwriting remote copies;
+#           with file arguments, upload only those files
 #   deploy  upload, then delete remote files that are not part of the website, after a y/N confirmation
 #   delete  delete everything on the server, after a typed confirmation
 #
@@ -95,9 +96,17 @@ site_files() {
     done
 }
 
+# Upload the website, or only the files given as arguments (paths relative to the repository root).
 upload() {
   local files path count=0
-  files=$(site_files)
+  if (($#)); then
+    for path in "$@"; do
+      [[ -f $path ]] || { echo "Not a file: $path" >&2; exit 1; }
+    done
+    files=$(printf '%s\n' "${@#./}")
+  else
+    files=$(site_files)
+  fi
   while IFS= read -r path; do
     [[ -z $path ]] && continue
     ftp --ftp-create-dirs -T "$path" "$(url "/$path")"
@@ -178,9 +187,10 @@ delete() {
 }
 
 case ${1:-} in
-  list | backup | upload | deploy | delete) "$1" ;;
+  upload) shift; upload "$@" ;;
+  list | backup | deploy | delete) "$1" ;;
   *)
-    echo "Usage: $0 list|backup|upload|deploy|delete" >&2
+    echo "Usage: $0 list|backup|upload [file...]|deploy|delete" >&2
     exit 1
     ;;
 esac

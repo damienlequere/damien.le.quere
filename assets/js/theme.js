@@ -1,13 +1,16 @@
 // Colour theme: "light", "dark" or "auto" (follow the OS setting), remembered in localStorage.
 // Loaded without defer in <head>, so the theme is set before the page is drawn (no white flash).
 (function () {
-    var KEY = "theme";
+    // Site-specific key: localhost:3000 is shared with other dev projects (next-themes stores "theme" = "system")
+    var KEY = "damien-le-quere:theme";
+    var CHOICES = ["light", "dark", "auto"];
     var root = document.documentElement;
     var dark = window.matchMedia("(prefers-color-scheme: dark)");
 
     function stored() {
         try {
-            return localStorage.getItem(KEY) || "auto";
+            var choice = localStorage.getItem(KEY);
+            return CHOICES.indexOf(choice) === -1 ? "auto" : choice;
         } catch (e) {
             return "auto";
         }

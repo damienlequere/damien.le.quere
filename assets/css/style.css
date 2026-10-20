@@ -152,6 +152,19 @@ cite {
     text-align: center;
 }
 
+/* Language of the resume behind each home button */
+.lang-badge {
+    display: inline-block;
+    margin-left: 0.6rem;
+    padding-left: 0.6rem;
+    border-left: 1px solid currentColor;
+    font-size: 0.6em;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    vertical-align: 0.15em;
+    opacity: 0.65;
+}
+
 /* ---------- Content pages: resume, publications, projects ---------- */
 
 .page-cv main,

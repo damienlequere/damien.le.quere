@@ -1,52 +1,55 @@
-// Colour theme: "light", "dark" or "auto" (follow the OS setting), remembered in localStorage.
+// Colour theme: "light" or "dark", toggled by the navbar button and remembered in localStorage.
+// Until the visitor picks one, the theme follows the OS setting.
 // Loaded without defer in <head>, so the theme is set before the page is drawn (no white flash).
 (function () {
     // Site-specific key: localhost:3000 is shared with other dev projects (next-themes stores "theme" = "system")
     var KEY = "damien-le-quere:theme";
-    var CHOICES = ["light", "dark", "auto"];
+    var THEMES = ["light", "dark"];
     var root = document.documentElement;
     var dark = window.matchMedia("(prefers-color-scheme: dark)");
 
+    // The stored theme, or null when none was picked (older "auto" values included)
     function stored() {
         try {
-            var choice = localStorage.getItem(KEY);
-            return CHOICES.indexOf(choice) === -1 ? "auto" : choice;
+            var theme = localStorage.getItem(KEY);
+            return THEMES.indexOf(theme) === -1 ? null : theme;
         } catch (e) {
-            return "auto";
+            return null;
         }
     }
 
-    function apply(choice) {
-        var theme = choice === "auto" ? (dark.matches ? "dark" : "light") : choice;
-        root.setAttribute("data-bs-theme", theme);
-        root.setAttribute("data-theme-choice", choice); // selects the navbar icon in style.css
+    function current() {
+        return stored() || (dark.matches ? "dark" : "light");
+    }
 
-        var items = document.querySelectorAll("[data-theme-value]");
-        for (var i = 0; i < items.length; i++) {
-            var active = items[i].getAttribute("data-theme-value") === choice;
-            items[i].classList.toggle("active", active);
-            items[i].setAttribute("aria-pressed", active);
+    function apply(theme) {
+        root.setAttribute("data-bs-theme", theme); // also selects the navbar icon in style.css
+
+        var label = theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
+        var buttons = document.querySelectorAll("[data-theme-toggle]");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].setAttribute("aria-label", label);
+            buttons[i].setAttribute("title", label);
         }
     }
 
-    apply(stored());
+    apply(current());
 
     document.addEventListener("DOMContentLoaded", function () {
-        apply(stored()); // mark the active menu item, now that the navbar exists
+        apply(current()); // label the button, now that the navbar exists
     });
 
     dark.addEventListener("change", function () {
-        if (stored() === "auto") apply("auto");
+        if (!stored()) apply(current());
     });
 
     document.addEventListener("click", function (event) {
-        var item = event.target.closest("[data-theme-value]");
-        if (!item) return;
-        var choice = item.getAttribute("data-theme-value");
+        if (!event.target.closest("[data-theme-toggle]")) return;
+        var theme = current() === "dark" ? "light" : "dark";
         try {
-            localStorage.setItem(KEY, choice);
+            localStorage.setItem(KEY, theme);
         } catch (e) {}
-        apply(choice);
+        apply(theme);
     });
 
     // Always print in the light theme.
@@ -54,6 +57,6 @@
         root.setAttribute("data-bs-theme", "light");
     });
     window.addEventListener("afterprint", function () {
-        apply(stored());
+        apply(current());
     });
 })();

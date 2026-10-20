@@ -103,7 +103,7 @@ cite {
     transform: translateY(calc(-100% - 1.5rem));
 }
 
-/* ---------- Navbar icons: GitHub link and theme switcher (see assets/js/theme.js) ---------- */
+/* ---------- Navbar icons: GitHub link and theme toggle (see assets/js/theme.js) ---------- */
 
 .navbar-icons {
     gap: 0.5rem;
@@ -122,19 +122,18 @@ cite {
     vertical-align: -0.2rem;
 }
 
-/* The theme button shows the icon of the current choice */
+/* The theme button shows the icon of the theme it switches to */
 .theme-icon {
     display: none;
 }
 
-[data-theme-choice="light"] .theme-icon-light,
-[data-theme-choice="dark"] .theme-icon-dark,
-[data-theme-choice="auto"] .theme-icon-auto {
+[data-bs-theme="light"] .theme-icon-dark,
+[data-bs-theme="dark"] .theme-icon-light {
     display: inline;
 }
 
-/* Without JavaScript the switcher cannot work */
-:root:not([data-theme-choice]) .theme-switcher {
+/* Without JavaScript the toggle cannot work */
+:root:not([data-bs-theme]) .theme-toggle {
     display: none;
 }
 

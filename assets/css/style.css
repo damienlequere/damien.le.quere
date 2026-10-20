@@ -245,7 +245,7 @@ cite {
 /* Clear the photo: where it is taller than the address, its float would shift the centred title left */
 .page-cv .cv-title {
     clear: both;
-    margin: 2.5rem 0;
+    margin: 3.5rem 0;
 }
 
 @media (min-width: 768px) {
@@ -256,7 +256,7 @@ cite {
     }
 
     .page-cv .cv-title {
-        margin: 3.5rem 0;
+        margin: 5rem 0;
     }
 }
 

@@ -23,6 +23,7 @@ const pages = {
   "publications.html": ["works", "publications"],
   "projects.html": ["works", "projects"],
   "contact.html": ["contact"],
+  "lab.html": ["lab"],
 };
 
 const START = "<!-- navbar:start -->";

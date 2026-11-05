@@ -66,6 +66,7 @@ cv/fr/index.html      French resume (served at /cv/fr/), keep in sync with the E
 publications.html     Thesis summary and publications
 projects.html         Academic projects
 contact.html          Contact
+lab.html              Lab
 partials/navbar.html  Shared navbar template (not uploaded, see `pnpm navbar`)
 
 assets/

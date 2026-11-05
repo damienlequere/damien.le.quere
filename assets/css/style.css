@@ -103,7 +103,7 @@ cite {
     transform: translateY(calc(-100% - 1.5rem));
 }
 
-/* ---------- Navbar icons: GitHub link and theme toggle (see assets/js/theme.js) ---------- */
+/* ---------- Navbar icons: Lab and GitHub links, theme toggle (see assets/js/theme.js) ---------- */
 
 .navbar-icons {
     gap: 0.5rem;
@@ -116,6 +116,10 @@ cite {
 .navbar-icons .nav-link:hover,
 .navbar-icons .nav-link:focus {
     color: var(--bs-navbar-hover-color);
+}
+
+.navbar-icons .nav-link.active {
+    color: var(--bs-navbar-active-color);
 }
 
 .navbar-icons .nav-link svg {

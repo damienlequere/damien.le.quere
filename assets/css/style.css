@@ -169,6 +169,17 @@ cite {
     opacity: 0.65;
 }
 
+/* ---------- Lab ---------- */
+
+/* Capsules have a fixed size, set by data-size in lab.html: 296px, to fit a 320px phone once
+   the .container gutters are removed. Keep the column width in sync with it. */
+.capsules {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 296px);
+    justify-content: center;
+    gap: 1.5rem;
+}
+
 /* ---------- Content pages: resume, publications, projects ---------- */
 
 .page-cv main,

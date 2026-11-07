@@ -105,7 +105,7 @@
       Experiments and side projects. Coming soon.
     </p> -->
 
-    <h1 class="display-4 pb-4">Projet en cours: <em>Esquisse</em></h1>
+    <h1 class="display-4 pb-4"><em>Esquisse</em></h1>
     <!-- <iframe class="d-block mx-auto" src="https://esquisse-kappa.vercel.app/embed/tristram/rue"
       title="Tristram, à la tombée du soir" width="390" height="845" loading="lazy"
       style="border: 0; max-width: 100%; color-scheme: light"></iframe> -->
@@ -114,12 +114,20 @@
     <script src="https://esquisse-kappa.vercel.app/capsule.js" data-scene="tristram/rue"
       data-title="Tristram, à la tombée du soir" data-size="200" async></script> -->
 
-    <script src="https://esquisse-kappa.vercel.app/capsule.js" data-scene="tristram/rue"
-      data-title="Tristram, à la tombée du soir" async></script>
+    <!-- Each script inserts its capsule right before itself. data-size matches the grid column, see .capsules -->
+    <div class="capsules">
+      <script src="https://esquisse-kappa.vercel.app/capsule.js" data-scene="tristram/rue"
+        data-title="Tristram, à la tombée du soir" data-size="296" async></script>
 
+      <script src="https://esquisse-kappa.vercel.app/capsule.js" data-scene="montagnes/plateau"
+        data-title="Le col des Montagnes hallucinées" data-size="296" async></script>
 
-    <script src="https://esquisse-kappa.vercel.app/capsule.js" data-scene="montagnes/plateau"
-      data-title="Le col des Montagnes hallucinées" async></script>
+      <script src="https://esquisse-kappa.vercel.app/capsule.js" data-scene="cthulhu/depart" data-size="296"
+        async></script>
+
+      <script src="https://esquisse-kappa.vercel.app/capsule.js" data-scene="terre-du-milieu/marais-des-morts"
+        data-size="296" async></script>
+    </div>
 
   </main>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

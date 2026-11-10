@@ -303,6 +303,21 @@ cite {
     }
 }
 
+/* Sub-projects nested under an experience entry: plain blocks, no decoration */
+.page-cv .subproject + .subproject {
+    margin-top: 1rem;
+}
+
+.page-cv .subproject h4 {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.page-cv .subproject p {
+    color: var(--bs-secondary-color);
+    margin-bottom: 0;
+}
+
 .page-cv .photo {
     width: 5.8rem;
     margin: 0 0 1rem 1rem;

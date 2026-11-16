@@ -263,6 +263,15 @@ cite {
     margin: 3.5rem 0;
 }
 
+/* Subtitle under the CV title: a light tagline rather than a full Bootstrap h2 */
+.page-cv .cv-title h2 {
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+    padding-top: 0.5rem !important;
+}
+
 @media (min-width: 768px) {
 
     .page-cv h1,
